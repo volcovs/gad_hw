@@ -189,86 +189,89 @@ def delete_line_by_task():
         print(f'Task-ul "{task_to_delete}" nu a fost gasit.')
 
 
+
+with open("taskuri.txt", 'a') as file:
+    # va crea fisierul unde se pastreaza task-uri (fara a suprascrie)
+    pass
 creare_categorii()
+adauga_task()
 while True:
-   adauga_task()
-   while True:
-       print("Meniu: ")
-       print("1. Listare date: în afișarea inițială a datelor se realizează o sortare în funcție de categorie.")
-       print("2. Sortare: se alege o opțiune din cele 8 de mai jos:")
-       print("3. Filtrare date: filtrarea datelor reprezintă de fapt o listare a datelor în funcție de anumite detalii date de la tastatură. criteriile de filtrare sunt:")
-       print("4. Adăugare task: se adaugă un nou task.")
-       print("5.  Editarea detaliilor referitoare la task, dată, persoană sau categorie dintr-un anumit task ales de utilizator de la tastatură (când se cere această opțiune, se va lista lista de taskuri cu un identificator unic pe rand, astfel încât să se știe ce informație urmează să editeze utilizatorul)")
-       print("6. Ștergerea unui task din lista inițială.")
-       print("7. Ieșire")
-       optiune = input("Introduceti optiunea: ")
+   print("Meniu: ")
+   print("1. Listare date: în afișarea inițială a datelor se realizează o sortare în funcție de categorie.")
+   print("2. Sortare: se alege o opțiune din cele 8 de mai jos:")
+   print("3. Filtrare date: filtrarea datelor reprezintă de fapt o listare a datelor în funcție de anumite detalii date de la tastatură. criteriile de filtrare sunt:")
+   print("4. Adăugare task: se adaugă un nou task.")
+   print("5.  Editarea detaliilor referitoare la task, dată, persoană sau categorie dintr-un anumit task ales de utilizator de la tastatură (când se cere această opțiune, se va lista lista de taskuri cu un identificator unic pe rand, astfel încât să se știe ce informație urmează să editeze utilizatorul)")
+   print("6. Ștergerea unui task din lista inițială.")
+   print("7. Ieșire")
+   optiune = input("Introduceti optiunea: ")
 
-       if optiune == "1":
-           listare_pe_categorii()
-           continue
+   if optiune == "1":
+       listare_pe_categorii()
+       continue
 
-       elif optiune == "2":
-           print("Meniu sortare: ")
-           print("1. sortare ascendentă task")
-           print("2. sortare descendentă task")
-           print("3. sortare ascendentă deadline")
-           print("4. sortare descendentă deadline")
-           print("5. sortare ascendentă persoană responsabilă")
-           print("6. sortare descendentă persoană responsabilă")
-           print("7. sortare ascendentă categorie")
-           print("8. sortare descendentă categorie")
-           print("9. revenire la meniul principal")
-           while True:
-               optiune_sortare = input("Introduceti optiunea:\n")
-               if optiune_sortare == "1":
-                   sortare_ascendenta_dupa_nume()
-                   break
-               elif optiune_sortare == "2":
-                   sortare_descendenta_dupa_nume()
-                   break
-               elif optiune_sortare == "3":
-                   sortare_ascendenta_dupa_deadline()
-                   break
-               elif optiune_sortare == "4":
-                   sortare_descendenta_dupa_deadline()
-                   break
-               elif optiune_sortare == "5":
-                   sortare_ascendenta_dupa_persoana()
-                   break
-               elif optiune_sortare == "6":
-                   sortare_descendenta_dupa_persoana()
-                   break
-               elif optiune_sortare == "7":
-                   sortare_ascendenta_dupa_categorie()
-                   break
-               elif optiune_sortare == "8":
-                   sortare_descendenta_dupa_categorie()
-                   break
-               elif optiune_sortare == "9":
-                   break
-               else:
-                   print("Optiune invalida\n")
-                   continue
+   elif optiune == "2":
+       print("Meniu sortare: ")
+       print("1. sortare ascendentă task")
+       print("2. sortare descendentă task")
+       print("3. sortare ascendentă deadline")
+       print("4. sortare descendentă deadline")
+       print("5. sortare ascendentă persoană responsabilă")
+       print("6. sortare descendentă persoană responsabilă")
+       print("7. sortare ascendentă categorie")
+       print("8. sortare descendentă categorie")
+       print("9. revenire la meniul principal")
+       while True:
+           optiune_sortare = input("Introduceti optiunea:\n")
+           if optiune_sortare == "1":
+               sortare_ascendenta_dupa_nume()
+               break
+           elif optiune_sortare == "2":
+               sortare_descendenta_dupa_nume()
+               break
+           elif optiune_sortare == "3":
+               sortare_ascendenta_dupa_deadline()
+               break
+           elif optiune_sortare == "4":
+               sortare_descendenta_dupa_deadline()
+               break
+           elif optiune_sortare == "5":
+               sortare_ascendenta_dupa_persoana()
+               break
+           elif optiune_sortare == "6":
+               sortare_descendenta_dupa_persoana()
+               break
+           elif optiune_sortare == "7":
+               sortare_ascendenta_dupa_categorie()
+               break
+           elif optiune_sortare == "8":
+               sortare_descendenta_dupa_categorie()
+               break
+           elif optiune_sortare == "9":
+               break
+           else:
+               print("Optiune invalida\n")
+               continue
 
-       elif optiune == "3":
-           # filtrare
-           continue
+   elif optiune == "3":
+       # filtrare
+       continue
 
-       elif optiune == "4":
-           ## Adaugare task nou
-           continue
+   elif optiune == "4":
+       ## Adaugare task nou
+       continue
 
-       elif optiune == "5":
-           # Editare task
-           continue
+   elif optiune == "5":
+       # Editare task
+       continue
 
-       elif optiune == "6":
-           # Stergere task
-           delete_line_by_task()
-           continue
-       elif optiune == "7":
-           # iesire
-           break
-       else:
-           print("Optiune invalida\n")
-           continue
+   elif optiune == "6":
+       # Stergere task
+       delete_line_by_task()
+       continue
+   elif optiune == "7":
+       # iesire
+       break
+   else:
+       print("Optiune invalida\n")
+       continue

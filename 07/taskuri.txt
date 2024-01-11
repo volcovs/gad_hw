@@ -1,1 +1,2 @@
-task1,deadline1,om1,curs
+task1,deadline1,om,curs
+task2,deadline2,om,munca
