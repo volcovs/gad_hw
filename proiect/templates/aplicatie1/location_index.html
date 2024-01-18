@@ -17,9 +17,20 @@
                     <td>{{ forloop.counter }}</td>
                     <td>{{ item.city }}</td>
                     <td>{{ item.country }}</td>
-                    <td>{{ item.active }}</td>
+                    <td>
+                        {% if item.active == 0 %}
+                            Inactiv
+                        {% else %}
+                            Activ
+                        {% endif %}
+                    </td>
                     <td>
                         <a class="btn btn-success" href="{% url 'aplicatie1:modificare' item.id %}">Editare</a>
+                        {% if item.active == 0 %}
+                            <a class="btn btn-danger" href="{% url 'aplicatie1:activare' item.id %}">Activare</a>
+                        {% else %}
+                            <a class="btn btn-danger" href="{% url 'aplicatie1:dezactivare' item.id %}">Dezactivare</a>
+                        {% endif %}
                     </td>
                 </tr>
             {% endfor %}
