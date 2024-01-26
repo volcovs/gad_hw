@@ -2,11 +2,14 @@
 {% block content %}
     {{ data_curenta }}
     <br>
-    <a class="btn btn-primary" href="{% url 'aplicatie1:adaugare' %}">Adaugare locatii</a>
+    <a class="btn btn-primary" href="{% url 'companie:adaugare' %}">Adaugare companie</a>
     <table class="table">
         <thead>
             <tr>
                 <th>Index</th>
+                <th>Company name</th>
+                <th>Company type</th>
+                <th>Website</th>
                 <th>City</th>
                 <th>Country</th>
                 <th>State</th>
@@ -14,11 +17,14 @@
             </tr>
         </thead>
         <tbody>
-            {% for item in location_list %}
+            {% for item in companies_list %}
                 <tr>
                     <td>{{ forloop.counter }}</td>
-                    <td>{{ item.city }}</td>
-                    <td>{{ item.country }}</td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.company_type }}</td>
+                    <td>{{ item.website }}</td>
+                    <td>{{ item.location.city }}</td>
+                    <td>{{ item.location.country }}</td>
                     <td>
                         {% if item.active == 0 %}
                             Inactiv
@@ -27,11 +33,11 @@
                         {% endif %}
                     </td>
                     <td>
-                        <a class="btn btn-success" href="{% url 'aplicatie1:modificare' item.id %}">Editare</a>
                         {% if item.active == 0 %}
-                            <a class="btn btn-danger" href="{% url 'aplicatie1:activare' item.id %}">Activare</a>
+                            <a class="btn btn-danger" href="{% url 'companie:activare' item.id %}">Activare</a>
                         {% else %}
-                            <a class="btn btn-danger" href="{% url 'aplicatie1:dezactivare' item.id %}">Dezactivare</a>
+                            <a class="btn btn-success" href="{% url 'companie:modificare' item.id %}">Editare</a>
+                            <a class="btn btn-danger" href="{% url 'companie:dezactivare' item.id %}">Dezactivare</a>
                         {% endif %}
                     </td>
                 </tr>

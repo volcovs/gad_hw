@@ -1,5 +1,5 @@
 """
-URL configuration for proiect project.
+URL configuration for homework3 project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -20,10 +20,8 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('location/', include('aplicatie1.urls')),
-    path('', LoginView.as_view(template_name='registration/login.html'), name='login'),
+    path('companies/', include('companie.urls')),
+    path('location/', include('locatie.urls')),
+    path('', LoginView.as_view(template_name='login.html'), name='login'),
     path('', include('django.contrib.auth.urls'), {'next_page': '/'}, name='login'),
-    path('pontaj/', include('pontaj.urls')),
-    path('user_profile/', include('userprofile.urls')),
-    path('my_api/', include('my_api.urls'))
 ]

@@ -2,7 +2,7 @@
 {% block content %}
     {{ data_curenta }}
     <br>
-    <a class="btn btn-primary" href="{% url 'aplicatie1:adaugare' %}">Adaugare locatii</a>
+    <a class="btn btn-primary" href="{% url 'locatie:adaugare' %}">Adaugare locatii</a>
     <table class="table">
         <thead>
             <tr>
@@ -27,11 +27,11 @@
                         {% endif %}
                     </td>
                     <td>
-                        <a class="btn btn-success" href="{% url 'aplicatie1:modificare' item.id %}">Editare</a>
                         {% if item.active == 0 %}
-                            <a class="btn btn-danger" href="{% url 'aplicatie1:activare' item.id %}">Activare</a>
+                            <a class="btn btn-danger" href="{% url 'locatie:activare' item.id %}">Activare</a>
                         {% else %}
-                            <a class="btn btn-danger" href="{% url 'aplicatie1:dezactivare' item.id %}">Dezactivare</a>
+                            <a class="btn btn-success" href="{% url 'locatie:modificare' item.id %}">Editare</a>
+                            <a class="btn btn-danger" href="{% url 'locatie:dezactivare' item.id %}">Dezactivare</a>
                         {% endif %}
                     </td>
                 </tr>
